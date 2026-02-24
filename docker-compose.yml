@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: idmachine-db
+    environment:
+      POSTGRES_DB: idmachine
+      POSTGRES_USER: idmachine
+      POSTGRES_PASSWORD: idmachine
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
