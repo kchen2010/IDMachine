@@ -26,8 +26,8 @@ public class TrackEntry {
     private String title;       // null if unknown
     private String trackArtist; // null if unknown
 
-    @Column(nullable = false)
-    private boolean id;    // true if listed as "ID" on 1001tracklists
+    @Column(name = "is_id", nullable = false)
+    private boolean idTrack;  // true if listed as "ID" on 1001tracklists
 
     @Column(nullable = false)
     private boolean ownId; // true if the ID belongs to the DJ playing the set

@@ -9,12 +9,14 @@ public interface TrackEntryRepository extends JpaRepository<TrackEntry, Long> {
 
     List<TrackEntry> findAllByTracklistId(Long tracklistId);
 
+    long countByTracklistId(Long tracklistId);
+
     // All IDs played by an artist
-    List<TrackEntry> findAllByTracklistArtistIdAndIdTrue(Long artistId);
+    List<TrackEntry> findAllByTracklistArtistIdAndIdTrackTrue(Long artistId);
 
     // IDs that are the DJ's own unreleased tracks
-    List<TrackEntry> findAllByTracklistArtistIdAndIdTrueAndOwnIdTrue(Long artistId);
+    List<TrackEntry> findAllByTracklistArtistIdAndIdTrackTrueAndOwnIdTrue(Long artistId);
 
     // IDs that belong to someone else
-    List<TrackEntry> findAllByTracklistArtistIdAndIdTrueAndOwnIdFalse(Long artistId);
+    List<TrackEntry> findAllByTracklistArtistIdAndIdTrackTrueAndOwnIdFalse(Long artistId);
 }
